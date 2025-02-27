@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import SmallButton from "./SmallButton";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,16 +42,16 @@ export default function Navbar() {
         } md:flex flex-col md:flex-row justify-center items-center w-full md:w-auto mt-4 md:mt-0`}
       >
         <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
-          <li className="px-4 py-2 text-lg font-semibold">Create Resume</li>
-          <li className="px-4 py-2 text-lg font-semibold">ATS Screen</li>
-          <li className="px-4 py-2 text-lg font-semibold">Pricing</li>
+          <Link href="/resume"><li className="px-4 py-2 text-lg font-semibold">Create Resume</li></Link>
+          <Link href="ats-screener"><li className="px-4 py-2 text-lg font-semibold">ATS Screen</li></Link>
+          <Link href="pricing"><li className="px-4 py-2 text-lg font-semibold">Pricing</li></Link>
         </ul>
       </div>
 
       {/* Buttons */}
       <div className="flex justify-center items-center space-x-4 mt-4 md:mt-0">
-        <SmallButton name="Login" />
-        <SmallButton name="Sign up" />
+        <Link href="/login"><SmallButton name="Login" /></Link>
+        <Link href="signup"><SmallButton name="Sign up" /></Link>
       </div>
     </div>
   );

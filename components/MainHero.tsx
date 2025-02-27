@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SmallButton from "./SmallButton";
 
 export default function MainHero() {
@@ -12,7 +13,7 @@ export default function MainHero() {
           Only 2% of resumes win. Yours will be one of them. Let’s build you a resume that works.
         </p>
         <div className="mt-6">
-          <SmallButton name="create your resume" />
+          <Link href="/resume"><SmallButton name="create your resume" /></Link>
         </div>
         <div className="flex flex-col mt-6 space-y-2">
           <div className="text-lg">
